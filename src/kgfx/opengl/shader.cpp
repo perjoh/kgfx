@@ -90,7 +90,7 @@ namespace opengl {
             throw std::runtime_error("Invalid shader filename. Cannot determine shader type.");
         }
 
-        auto source = klib::read_textfile(filename.c_str());
+        auto source = klib::io::read_textfile(filename.c_str());
         Shader shader(shader_type, source.c_str());
         return shader;
     }
@@ -302,11 +302,11 @@ namespace opengl {
         return location_ != -1;
     }
 
-    template Shader_uniform<float>;
-    template Shader_uniform<glm::vec3>;
-    template Shader_uniform<glm::vec4>;
-    template Shader_uniform<glm::mat3>;
-    template Shader_uniform<glm::mat4>;
+    template class Shader_uniform<float>;
+    template class Shader_uniform<glm::vec3>;
+    template class Shader_uniform<glm::vec4>;
+    template class Shader_uniform<glm::mat3>;
+    template class Shader_uniform<glm::mat4>;
 
 } // namespace opengl
 } // namespace kgfx

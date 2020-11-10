@@ -9,8 +9,8 @@ set(IS_GCC "$<CXX_COMPILER_ID:GNU>")
 
 function(enable_compile_options target)
     # Warning level (MSVC)
-    target_compile_options(${target} PUBLIC "$<${IS_MSVC}:/W4>")
-    target_compile_options(${target} PUBLIC "$<${IS_MSVC}:/bigobj>")
+    #target_compile_options(${target} PUBLIC "$<${IS_MSVC}:/W4>")
+    #target_compile_options(${target} PUBLIC "$<${IS_MSVC}:/bigobj>")
 
     # Optimizations GCC (Release)
     target_compile_options(${target} PUBLIC "$<$<AND:${IS_GCC},$<CONFIG:RELEASE>>:-O3>")

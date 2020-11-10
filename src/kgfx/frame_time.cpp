@@ -56,7 +56,7 @@ namespace kgfx {
     {
         if (second < first)
         {
-            return (~unsigned long(0)) - first + second;
+            return ~static_cast<unsigned long>(0) - first + second;
         }
 
         return second - first;
